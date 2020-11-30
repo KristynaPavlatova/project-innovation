@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F3BB7900-8FC9-795D-B2C2-4B769D95456B}</ProjectGuid>
+    <ProjectGuid>{BE4C89CD-95E8-B107-925C-828ECE75EE9D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -624,34 +624,34 @@
       <HintPath>D:/Unity/HUB/2019.4.10f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/university/Year_2/Q2/project-innovation/Unity/project-innovation-2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/university/Year_2/Q2/project-innovation/git/project-innovation/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/university/Year_2/Q2/project-innovation/Unity/project-innovation-2020/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/university/Year_2/Q2/project-innovation/git/project-innovation/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/university/Year_2/Q2/project-innovation/Unity/project-innovation-2020/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/university/Year_2/Q2/project-innovation/git/project-innovation/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/university/Year_2/Q2/project-innovation/Unity/project-innovation-2020/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/university/Year_2/Q2/project-innovation/git/project-innovation/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/university/Year_2/Q2/project-innovation/Unity/project-innovation-2020/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/university/Year_2/Q2/project-innovation/git/project-innovation/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/university/Year_2/Q2/project-innovation/Unity/project-innovation-2020/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/university/Year_2/Q2/project-innovation/git/project-innovation/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/university/Year_2/Q2/project-innovation/Unity/project-innovation-2020/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/university/Year_2/Q2/project-innovation/git/project-innovation/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{403361BB-64DA-F8E4-D14D-69DF12CF3E43}</Project>
+      <Project>{0DBE5453-1E81-55BC-20F8-CF55DCE1FCC0}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{24785978-8AC8-6B36-EFB6-BED8EA723A3F}</Project>
+      <Project>{DCF17C59-5E41-C668-028D-638B5CB49148}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
   </ItemGroup>

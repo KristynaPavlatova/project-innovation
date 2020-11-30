@@ -13,10 +13,7 @@ public class CharacterCreationMenu : MonoBehaviour
 
     private void Start()
     {
-        foreach (CharacterChanger changer in changerOfCharacerPart)//go through the list of changers and call their Randomize method
-        {
-            changer.Randomize();
-        }
+        RandomizeCharacter();
     }
     public void RandomizeCharacter()
     {
