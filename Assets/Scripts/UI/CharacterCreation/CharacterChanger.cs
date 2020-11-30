@@ -30,8 +30,12 @@ public class CharacterChanger : MonoBehaviour
 
     private void Start()
     {
-        switchArtSets();
+        switchArtSets();//ON GAMEMANAGER CHANGING TO CHARACTER CREATION MENU !!!****************************************
     }
+
+    //---------------------------------------------------------------------------------------------------
+    // BUTTONS methods
+    //---------------------------------------------------------------------------------------------------
     public void NextOption()
     {
         currentOption++;

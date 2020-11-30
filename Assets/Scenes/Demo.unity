@@ -2318,11 +2318,21 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e79955d261c242942a06ab7ccee04027, type: 3}
   - {fileID: 21300000, guid: e34ffdf51d41cd84c8a62dba4224e475, type: 3}
   - {fileID: 21300000, guid: 8a778fabda0035943b7582db352b08fc, type: 3}
-  HumanOptionsM: []
-  HumanOptionsF: []
-  AlienOptions: []
-  CyborgOptionsM: []
-  CyborgOptionsF: []
+  HumanOptionsM:
+  - {fileID: 21300000, guid: 37ac4b2fb3bbc6c4d97c4a913dba50ee, type: 3}
+  - {fileID: 21300000, guid: 37ac4b2fb3bbc6c4d97c4a913dba50ee, type: 3}
+  HumanOptionsF:
+  - {fileID: 21300000, guid: 3278e06cd4a4abd45bf35a6687e29306, type: 3}
+  - {fileID: 21300000, guid: 3278e06cd4a4abd45bf35a6687e29306, type: 3}
+  AlienOptions:
+  - {fileID: 21300000, guid: 4526e0fc7ad58e442bb389852705cabf, type: 3}
+  - {fileID: 21300000, guid: 4526e0fc7ad58e442bb389852705cabf, type: 3}
+  CyborgOptionsM:
+  - {fileID: 21300000, guid: b8276fd83d6207d4eaa7314aaf7668f3, type: 3}
+  - {fileID: 21300000, guid: b8276fd83d6207d4eaa7314aaf7668f3, type: 3}
+  CyborgOptionsF:
+  - {fileID: 21300000, guid: 6662b1f82a1e3a24f849652a006d03ce, type: 3}
+  - {fileID: 21300000, guid: 6662b1f82a1e3a24f849652a006d03ce, type: 3}
   gameManager: {fileID: 1013546741}
   currentOption: 0
 --- !u!1 &341978869
@@ -3152,7 +3162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &468431947
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3807,12 +3817,20 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e34ffdf51d41cd84c8a62dba4224e475, type: 3}
   - {fileID: 21300000, guid: 8a778fabda0035943b7582db352b08fc, type: 3}
   HumanOptionsM:
+  - {fileID: 21300000, guid: 37ac4b2fb3bbc6c4d97c4a913dba50ee, type: 3}
+  - {fileID: 21300000, guid: 37ac4b2fb3bbc6c4d97c4a913dba50ee, type: 3}
+  HumanOptionsF:
+  - {fileID: 21300000, guid: 3278e06cd4a4abd45bf35a6687e29306, type: 3}
+  - {fileID: 21300000, guid: 3278e06cd4a4abd45bf35a6687e29306, type: 3}
+  AlienOptions:
   - {fileID: 21300000, guid: 4526e0fc7ad58e442bb389852705cabf, type: 3}
   - {fileID: 21300000, guid: 4526e0fc7ad58e442bb389852705cabf, type: 3}
-  HumanOptionsF: []
-  AlienOptions: []
-  CyborgOptionsM: []
-  CyborgOptionsF: []
+  CyborgOptionsM:
+  - {fileID: 21300000, guid: b8276fd83d6207d4eaa7314aaf7668f3, type: 3}
+  - {fileID: 21300000, guid: b8276fd83d6207d4eaa7314aaf7668f3, type: 3}
+  CyborgOptionsF:
+  - {fileID: 21300000, guid: 6662b1f82a1e3a24f849652a006d03ce, type: 3}
+  - {fileID: 21300000, guid: 6662b1f82a1e3a24f849652a006d03ce, type: 3}
   gameManager: {fileID: 1013546741}
   currentOption: 0
 --- !u!1 &519560151
@@ -4030,11 +4048,21 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e79955d261c242942a06ab7ccee04027, type: 3}
   - {fileID: 21300000, guid: e34ffdf51d41cd84c8a62dba4224e475, type: 3}
   - {fileID: 21300000, guid: 8a778fabda0035943b7582db352b08fc, type: 3}
-  HumanOptionsM: []
-  HumanOptionsF: []
-  AlienOptions: []
-  CyborgOptionsM: []
-  CyborgOptionsF: []
+  HumanOptionsM:
+  - {fileID: 21300000, guid: 37ac4b2fb3bbc6c4d97c4a913dba50ee, type: 3}
+  - {fileID: 21300000, guid: 37ac4b2fb3bbc6c4d97c4a913dba50ee, type: 3}
+  HumanOptionsF:
+  - {fileID: 21300000, guid: 3278e06cd4a4abd45bf35a6687e29306, type: 3}
+  - {fileID: 21300000, guid: 3278e06cd4a4abd45bf35a6687e29306, type: 3}
+  AlienOptions:
+  - {fileID: 21300000, guid: 4526e0fc7ad58e442bb389852705cabf, type: 3}
+  - {fileID: 21300000, guid: 4526e0fc7ad58e442bb389852705cabf, type: 3}
+  CyborgOptionsM:
+  - {fileID: 21300000, guid: b8276fd83d6207d4eaa7314aaf7668f3, type: 3}
+  - {fileID: 21300000, guid: b8276fd83d6207d4eaa7314aaf7668f3, type: 3}
+  CyborgOptionsF:
+  - {fileID: 21300000, guid: 6662b1f82a1e3a24f849652a006d03ce, type: 3}
+  - {fileID: 21300000, guid: 6662b1f82a1e3a24f849652a006d03ce, type: 3}
   gameManager: {fileID: 1013546741}
   currentOption: 0
 --- !u!1 &651104795
@@ -7618,11 +7646,21 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e79955d261c242942a06ab7ccee04027, type: 3}
   - {fileID: 21300000, guid: e34ffdf51d41cd84c8a62dba4224e475, type: 3}
   - {fileID: 21300000, guid: 8a778fabda0035943b7582db352b08fc, type: 3}
-  HumanOptionsM: []
-  HumanOptionsF: []
-  AlienOptions: []
-  CyborgOptionsM: []
-  CyborgOptionsF: []
+  HumanOptionsM:
+  - {fileID: 21300000, guid: 37ac4b2fb3bbc6c4d97c4a913dba50ee, type: 3}
+  - {fileID: 21300000, guid: 37ac4b2fb3bbc6c4d97c4a913dba50ee, type: 3}
+  HumanOptionsF:
+  - {fileID: 21300000, guid: 3278e06cd4a4abd45bf35a6687e29306, type: 3}
+  - {fileID: 21300000, guid: 3278e06cd4a4abd45bf35a6687e29306, type: 3}
+  AlienOptions:
+  - {fileID: 21300000, guid: 4526e0fc7ad58e442bb389852705cabf, type: 3}
+  - {fileID: 21300000, guid: 4526e0fc7ad58e442bb389852705cabf, type: 3}
+  CyborgOptionsM:
+  - {fileID: 21300000, guid: b8276fd83d6207d4eaa7314aaf7668f3, type: 3}
+  - {fileID: 21300000, guid: b8276fd83d6207d4eaa7314aaf7668f3, type: 3}
+  CyborgOptionsF:
+  - {fileID: 21300000, guid: 6662b1f82a1e3a24f849652a006d03ce, type: 3}
+  - {fileID: 21300000, guid: 6662b1f82a1e3a24f849652a006d03ce, type: 3}
   gameManager: {fileID: 1013546741}
   currentOption: 0
 --- !u!1 &1436955515
