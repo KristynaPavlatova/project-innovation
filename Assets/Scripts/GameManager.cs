@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
     //---------------------------------------------------------------------------------------
     private void characterCreationShow()
     {
-        getInputFieldInfo();
+        getInputFieldInfo();//get info from the website form (name)
 
         _websiteFormVisible = false;
         WebsiteForm.SetActive(_websiteFormVisible);//hide the website form (part 1)
@@ -139,6 +139,7 @@ public class GameManager : MonoBehaviour
         {
             _characterCreatorVisible = true;
             CharacterCreationPart.SetActive(_characterCreatorVisible);
+            //TO DO: SEND EVENT FOR CharacterChanger TO CHECK THE SPECIES+GENDER TO CHOSE CORRECT ART SET !!!**********************
         }//otherwise, it should be always not active at first >> manually disable in inspetor
     }
     private void getInputFieldInfo()
