@@ -33,6 +33,7 @@ public class ProjectPlaceOptions : MonoBehaviour
             _option = targetSelector.GetComponent<CharacterChanger>().currentOption;//********************** get the sprite or the option from the target
             //get the sprite from the target list of the correct number from the list:
             chosenSprite = targetSelector.GetComponent<CharacterChanger>().options[_option];
+
             //this sprite renderer is going to render the chosenSprite:
             this.GetComponent<SpriteRenderer>().sprite = chosenSprite;
 
