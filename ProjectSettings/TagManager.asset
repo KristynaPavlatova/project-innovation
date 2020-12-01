@@ -8,6 +8,7 @@ TagManager:
   - HairColorSelector
   - SkinColorSelector
   - EyeColorSelector
+  - TutorialText
   layers:
   - Default
   - TransparentFX

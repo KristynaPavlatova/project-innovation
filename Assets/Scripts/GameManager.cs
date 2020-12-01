@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject ProjectionPlace;
     public GameObject QuitText;
     public GameObject hintText;
-    
+    public GameObject TutorialWindow;
+
     public Text nameInputFieldText;//Getting info from InputField's text
 
     [HideInInspector]
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     private bool _characterCreatorVisible = false;
     private bool _characterSubmitted = false;
     private bool _playerInteractionEnabled = true;
+    private bool _tutoriaWindowVisible = true;
     private bool _quitAppIsPossible = false;
 
     public static event Action DisplayProjectionEvent;
@@ -58,6 +60,9 @@ public class GameManager : MonoBehaviour
         //CHARACTER CREATOR:
         InputFieldTransfer.ContinuePressed += showCharacterCreation;//hide website from, show character creation part
         CharacterCreationMenu.CharacterSubmited += characterDone;//once character is created and submitted
+        TutorialClickHandlers.toggleInteraction += interactionSetup; //to toggle player availablity in totorial script
+        Cursor.lockState = CursorLockMode.Confined;//to enable availability on the tutorial window in the start
+        interactionSetup();
 
     }
     private void OnDestroy()
@@ -74,6 +79,9 @@ public class GameManager : MonoBehaviour
         //-------------------------------------
         //CHARACTER CREATOR:
         CharacterCreationMenu.CharacterSubmited -= characterDone;
+
+        TutorialClickHandlers.toggleInteraction -= interactionSetup;
+
     }
 
     // Update is called once per frame
@@ -95,6 +103,22 @@ public class GameManager : MonoBehaviour
             _websiteFormVisible = true;
             WebsiteForm.SetActive(_websiteFormVisible);
             hintText.SetActive(true);//show the hint text
+
+            _scanCodeUIVisible = false;//hide the "press button" suggestion
+            if (isDebugOn) { Debug.Log("GameManager: showWebsiteForm"); }
+            interactionSetup();//disable player movement, lock mouse
+        }//>> part 2 by event
+    }
+
+    /// <summary>
+    /// Toggles the tutorial 
+    /// </summary>
+    private void showTutorialScreen()
+    {
+        if (_tutoriaWindowVisible)//checks if you may show the tutorial (only at the start of running the application.
+        {
+            //Display the first tutorialscreen
+            TutorialWindow.SetActive(_tutoriaWindowVisible);
 
             _scanCodeUIVisible = false;//hide the "press button" suggestion
             if (isDebugOn) { Debug.Log("GameManager: showWebsiteForm"); }
@@ -130,7 +154,7 @@ public class GameManager : MonoBehaviour
         getInputFieldInfo();//get info from the website form (name, age)
 
         _websiteFormVisible = false;
-        WebsiteForm.SetActive(_websiteFormVisible);//hide the website form (part 1)
+        WebsiteForm.SetActive(_websiteFormVisible); //hide the website form (part 1)
         hintText.SetActive(false);
 
         if (!_characterCreatorVisible)
