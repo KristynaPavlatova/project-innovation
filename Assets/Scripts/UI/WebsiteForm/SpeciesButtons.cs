@@ -12,9 +12,10 @@ public class SpeciesButtons : MonoBehaviour
 
     public static event Action MaleSelected;
     public static event Action FemaleSelected;
+    //--------------------------------------------------------------------------------------------------------------------------------
 
-    //Fire events so GameManager can change its species & gender variables
-    //So, the CharacterChanger can chose the correct art set
+    /*Fire events so GameManager can change its species & gender variables
+      So, the CharacterChanger can chose the correct art set*/
     public void HumanButton()
     {
         HumanSelected();

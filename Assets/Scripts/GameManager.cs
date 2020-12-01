@@ -29,11 +29,12 @@ public class GameManager : MonoBehaviour
     private bool _quitAppIsPossible = false;
 
     public static event Action DisplayProjectionEvent;
+    public static event Action CheckSpeciesGenderSettings;//for CharacterChanger to check settings from WebsiteForm
 
     //for species, gender selection in website from
-    private int _species = 0;//default: human
-    private int _gender = 0;//default: male
-
+    public int species = 0;//default: human
+    public int gender = 0;//default: male
+    //--------------------------------------------------------------------------------------------------------------------------------
 
     // Start is called before the first frame update
     void Start()
@@ -55,12 +56,9 @@ public class GameManager : MonoBehaviour
 
         //-------------------------------------
         //CHARACTER CREATOR:
-        //hide website from, show character creation part
-        InputFieldTransfer.ContinuePressed += characterCreationShow;
-        //once character is created and submitted
-        CharacterCreationMenu.CharacterSubmited += characterDone;
-        //preparation for walkthrough
-        
+        InputFieldTransfer.ContinuePressed += showCharacterCreation;//hide website from, show character creation part
+        CharacterCreationMenu.CharacterSubmited += characterDone;//once character is created and submitted
+
     }
     private void OnDestroy()
     {
@@ -71,7 +69,7 @@ public class GameManager : MonoBehaviour
 
         //-------------------------------------
         //WEBSITE FORM:
-        InputFieldTransfer.ContinuePressed -= characterCreationShow;
+        InputFieldTransfer.ContinuePressed -= showCharacterCreation;
 
         //-------------------------------------
         //CHARACTER CREATOR:
@@ -99,7 +97,7 @@ public class GameManager : MonoBehaviour
             hintText.SetActive(true);//show the hint text
 
             _scanCodeUIVisible = false;//hide the "press button" suggestion
-
+            if (isDebugOn) { Debug.Log("GameManager: showWebsiteForm"); }
             interactionSetup();//disable player movement, lock mouse
         }//>> part 2 by event
     }
@@ -127,9 +125,9 @@ public class GameManager : MonoBehaviour
     //---------------------------------------------------------------------------------------
     // CHARACTER CREATOR part 3
     //---------------------------------------------------------------------------------------
-    private void characterCreationShow()
+    private void showCharacterCreation()
     {
-        getInputFieldInfo();//get info from the website form (name)
+        getInputFieldInfo();//get info from the website form (name, age)
 
         _websiteFormVisible = false;
         WebsiteForm.SetActive(_websiteFormVisible);//hide the website form (part 1)
@@ -139,17 +137,22 @@ public class GameManager : MonoBehaviour
         {
             _characterCreatorVisible = true;
             CharacterCreationPart.SetActive(_characterCreatorVisible);
-            //TO DO: SEND EVENT FOR CharacterChanger TO CHECK THE SPECIES+GENDER TO CHOSE CORRECT ART SET !!!**********************
+            if (isDebugOn) { Debug.Log("GameManager: _characterCreatorVisible = " + _characterCreatorVisible); }
         }//otherwise, it should be always not active at first >> manually disable in inspetor
+    }
+    private void startCheckingSettings()
+    {
+        CheckSpeciesGenderSettings();//for CharacterChanger to check settings from WebsiteForm
     }
     private void getInputFieldInfo()
     {
         userName = nameInputFieldText.text;
     }
-    /// <summary>
-    /// Hide characterCreator. Change playerInteractionSetup to moving again. Show the created character.
-    /// Fire event for ProjectionPlace to instantiate the prefab with the correct sprites.
-    /// </summary>
+    //---------------------------------------------------------------------------------------
+    // ONCE CHARACTER DONE
+    //---------------------------------------------------------------------------------------
+    /* Hide characterCreator. Change playerInteractionSetup to moving again. Show the created character.
+       Fire event for ProjectionPlace to instantiate the prefab with the correct sprites.*/
     private void characterDone()
     {
         _characterCreatorVisible = false;
@@ -162,6 +165,7 @@ public class GameManager : MonoBehaviour
         DisplayProjectionEvent();//fire event so ProjectionPlace instantiates Projection prefab with the correct sprites >> how user created it
 
         enableQuitApplication();
+        if (isDebugOn) { Debug.Log("GameManager: Character done. Hide CharacterCreationPart, ProjectionPlace active, DisplayProjectionEvent"); }
     }
 
     //---------------------------------------------------------------------------------------
@@ -194,7 +198,7 @@ public class GameManager : MonoBehaviour
             
             Cursor.lockState = CursorLockMode.Confined;//lock the mouse cursor >> navigation on within the Game window
             _playerInteractionEnabled = false;
-            if (isDebugOn) { Debug.Log("_playerInteractionEnabled = " + _playerInteractionEnabled); }
+            if (isDebugOn) { Debug.Log("GameManager: _playerInteractionEnabled = " + _playerInteractionEnabled); }
         }
         else
         {
@@ -205,7 +209,7 @@ public class GameManager : MonoBehaviour
             
             Cursor.lockState = CursorLockMode.Locked;//unlock the mouse cursor
             _playerInteractionEnabled = true;
-            if (isDebugOn) { Debug.Log("_playerInteractionEnabled = " + _playerInteractionEnabled); }
+            if (isDebugOn) { Debug.Log("GameManager: _playerInteractionEnabled = " + _playerInteractionEnabled); }
         }
     }
 
@@ -214,27 +218,27 @@ public class GameManager : MonoBehaviour
     //---------------------------------------------------------------------------------------
     private void humanSelected()
     {
-        _species = 0;
-        if (isDebugOn) { Debug.Log("Species = " + _species); }
+        species = 0;
+        if (isDebugOn) { Debug.Log("GameManager: Species = " + species); }
     }
     private void alienSelected()
     {
-        _species = 1;
-        if (isDebugOn) { Debug.Log("Species = " + _species); }
+        species = 1;
+        if (isDebugOn) { Debug.Log("GameManager: Species = " + species); }
     }
     private void cyborgSelected()
     {
-        _species = 2;
-        if (isDebugOn) { Debug.Log("Species = " + _species); }
+        species = 2;
+        if (isDebugOn) { Debug.Log("GameManager: Species = " + species); }
     }
     private void maleSelected()
     {
-        _gender = 0;
-        if (isDebugOn) { Debug.Log("Gender = " + _gender); }
+        gender = 0;
+        if (isDebugOn) { Debug.Log("GameManager: Gender = " + gender); }
     }
     private void femaleSelected()
     {
-        _gender = 1;
-        if (isDebugOn) { Debug.Log("Gender = " + _gender); }
+        gender = 1;
+        if (isDebugOn) { Debug.Log("GameManager: Gender = " + gender); }
     }
 }

@@ -31,44 +31,29 @@ public class InputFieldTransfer : MonoBehaviour
     public GameObject textDisplayGender;
 
     public static event Action ContinuePressed;
+    //--------------------------------------------------------------------------------------------------------------------------------
 
-    public void Continue()
+    public void Continue()//continue to CharacterCreation part
     {
         StoreFieldsInfo();
-        //TO DO:
-        //store the name or send it somewhere so then we can project it >> for all cathegories !!! TUTORIAL different way
-        //then hide this website part >> event to GameManager
         ContinuePressed();//EVENT
+        Debug.Log("InputFieldTransfer: ContinuePressed event");
     }
     private void StoreFieldsInfo()
     {
         StoreName();
         StoreAge();
-        StoreRace();
-        StoreGender();
     }
     public void StoreName()
     {
         Name = inputFieldName.GetComponent<Text>().text;//what ever is written in the inputFieldName >> put it into the Name variable
         textDisplayName.GetComponent<Text>().text = Name;//put the string Name into the text that gets displayed
-        Debug.Log("StoreName");
+        //Debug.Log("StoreName");
     }
     public void StoreAge()
     {
         Age = inputFieldAge.GetComponent<Text>().text;//what ever is written in the inputFieldName >> put it into the Name variable
         textDisplayAge.GetComponent<Text>().text = Age;//put the string Name into the text that gets displayed
-        Debug.Log("StoreAge");
-    }
-    public void StoreRace()
-    {
-        Race = inputFieldRace.GetComponent<Text>().text;//what ever is written in the inputFieldName >> put it into the Name variable
-        textDisplayRace.GetComponent<Text>().text = Race;//put the string Name into the text that gets displayed
-        Debug.Log("StoreRace");
-    }
-    public void StoreGender()
-    {
-        Gender = inputFieldGender.GetComponent<Text>().text;//what ever is written in the inputFieldName >> put it into the Name variable
-        textDisplayGender.GetComponent<Text>().text = Gender;//put the string Name into the text that gets displayed
-        Debug.Log("StoreGender");
+        //Debug.Log("StoreAge");
     }
 }

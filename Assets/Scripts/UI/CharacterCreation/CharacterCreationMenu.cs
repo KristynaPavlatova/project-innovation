@@ -10,24 +10,29 @@ public class CharacterCreationMenu : MonoBehaviour
     //insert the gameObjects that are responsible for switching the character parts, not the actual character parts
     public List<CharacterChanger> changerOfCharacerPart = new List<CharacterChanger>();
     public static event Action CharacterSubmited;
+    //--------------------------------------------------------------------------------------------------------------------------------
 
     private void Start()
     {
-        RandomizeCharacter();
+        Debug.Log("CharacterCreationMenu: RandomizeCharacter();");
+        SetDefaultCharacter();
     }
-    public void RandomizeCharacter()
+    //---------------------------------------------------------------------------------
+    // SET DEFAULT LOOK FOR CHARACTER IN CHAR. CREATION MENU
+    //---------------------------------------------------------------------------------
+    public void SetDefaultCharacter()//before changing it based on user input
     {
         foreach (CharacterChanger changer in changerOfCharacerPart)//go through the list of changers and call their Randomize method
         {
-            changer.Randomize();
+            changer.switchArtSets();//change the art set of the changer
+            changer.SetToFirstSprite();
+            Debug.Log("CharacterCreationMenu: changer.Randomize();");
         }
     }
 
     public void SubmitCharacter()
     {
-        //PrefabUtility.SaveAsPrefabAsset(Character, "Assets/Prefabs/Character.prefab");
-        //Debug.Log("Character prefab changed based on current costumization.");
-        Debug.Log("Character submitte >> GameManager");
-        CharacterSubmited();//for gameManager
+        Debug.Log("CharacterCreationMenu: Character submited >> GameManager");
+        CharacterSubmited();//for gameManager that character is done
     }
 }
