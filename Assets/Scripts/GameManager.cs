@@ -97,9 +97,9 @@ public class GameManager : MonoBehaviour
     //---------------------------------------------------------------------------------------
     private void showWebsiteForm()
     {
-        if (_scanCodeUIVisible && Input.GetKeyDown(KeyCode.Q))//to open website (form part 1)
+        if (_scanCodeUIVisible && Input.GetKeyDown(KeyCode.Q))//to open website
         {
-            //Display the website UI where you can start creating your character
+            //Display the websiteForm UI where you can start creating your character (name, age, species, gender)
             _websiteFormVisible = true;
             WebsiteForm.SetActive(_websiteFormVisible);
             hintText.SetActive(true);//show the hint text
@@ -154,13 +154,13 @@ public class GameManager : MonoBehaviour
         getInputFieldInfo();//get info from the website form (name, age)
 
         _websiteFormVisible = false;
-        WebsiteForm.SetActive(_websiteFormVisible); //hide the website form (part 1)
+        WebsiteForm.SetActive(_websiteFormVisible);//hide the websiteForm
         hintText.SetActive(false);
 
         if (!_characterCreatorVisible)
         {
             _characterCreatorVisible = true;
-            CharacterCreationPart.SetActive(_characterCreatorVisible);
+            CharacterCreationPart.SetActive(_characterCreatorVisible);//make it visible
             if (isDebugOn) { Debug.Log("GameManager: _characterCreatorVisible = " + _characterCreatorVisible); }
         }//otherwise, it should be always not active at first >> manually disable in inspetor
     }
@@ -179,16 +179,16 @@ public class GameManager : MonoBehaviour
        Fire event for ProjectionPlace to instantiate the prefab with the correct sprites.*/
     private void characterDone()
     {
-        _characterCreatorVisible = false;
-        CharacterCreationPart.SetActive(_characterCreatorVisible);
-        interactionSetup();//unlock the player and the cursor
-
         _characterSubmitted = true;
         ProjectionPlace.SetActive(true);//make the character visible
-
+        interactionSetup();//unlock the player and the cursor
         DisplayProjectionEvent();//fire event so ProjectionPlace instantiates Projection prefab with the correct sprites >> how user created it
-
+        
         enableQuitApplication();
+
+        _characterCreatorVisible = false;
+        CharacterCreationPart.SetActive(_characterCreatorVisible);
+        
         if (isDebugOn) { Debug.Log("GameManager: Character done. Hide CharacterCreationPart, ProjectionPlace active, DisplayProjectionEvent"); }
     }
 

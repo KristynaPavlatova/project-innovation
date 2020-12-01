@@ -33,6 +33,6 @@ public class CharacterCreationMenu : MonoBehaviour
     public void SubmitCharacter()
     {
         Debug.Log("CharacterCreationMenu: Character submited >> GameManager");
-        CharacterSubmited();//for gameManager that character is done
+        CharacterSubmited();//for gameManager that character is done + AudioManager to play confirm sound
     }
 }
