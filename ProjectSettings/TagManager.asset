@@ -19,10 +19,10 @@ TagManager:
   - 
   - 
   - Ground
-  - 
-  - 
-  - 
-  - 
+  - Skin
+  - Clothing
+  - Hair
+  - Accessories
   - 
   - 
   - 
@@ -45,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: ProjectionPlace
+    uniqueID: 3390198357
     locked: 0
