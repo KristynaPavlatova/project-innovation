@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     private bool _websiteFormVisible = false;
     private bool _characterCreatorVisible = false;
     private bool _characterSubmitted = false;
-    private bool _playerInteractionEnabled = true;
+    private bool _playerInteractionEnabled = false;//true
     private bool _tutoriaWindowVisible = true;
     private bool _quitAppIsPossible = false;
 
